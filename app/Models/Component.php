@@ -15,4 +15,8 @@ class Component extends Model
         'is_active',
         'condition_id',
     ];
+
+    public function condition(){
+        return $this->belongsTo(Condition::class);
+    }
 }
