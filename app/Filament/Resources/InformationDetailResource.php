@@ -65,6 +65,10 @@ class InformationDetailResource extends Resource
                     ->label('Link')
                     ->searchable()
                     ->limit(30),
+                Tables\Columns\TextColumn::make('information.name')
+                    ->label('Información')
+                    ->searchable()
+                    ->limit(30),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
                     ->label('Es activo'),
