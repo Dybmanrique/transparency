@@ -19,4 +19,8 @@ class Component extends Model
     public function condition(){
         return $this->belongsTo(Condition::class);
     }
+
+    public function indicators(){
+        return $this->hasMany(Indicator::class);
+    }
 }

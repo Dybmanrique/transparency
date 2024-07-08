@@ -80,7 +80,7 @@ class ComponentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\IndicatorsRelationManager::class,
         ];
     }
 
