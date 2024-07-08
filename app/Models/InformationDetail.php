@@ -15,4 +15,8 @@ class InformationDetail extends Model
         'is_active',
         'information_id',
     ];
+
+    public function information() {
+        return $this->belongsTo(Information::class);
+    }
 }
