@@ -21,8 +21,12 @@ class Indicator extends Model
         return $this->belongsTo(Component::class);
     }
 
+    public function verification_resources(){
+        return $this->hasMany(VerificationResource::class);
+    }
+
     public function getTruncatedNameAttribute()
     {
-        return Str::limit($this->description, 110); // Trunca a 50 caracteres, por ejemplo
+        return Str::limit($this->description, 110);
     }
 }

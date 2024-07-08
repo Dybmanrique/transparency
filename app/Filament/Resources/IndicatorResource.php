@@ -74,7 +74,7 @@ class IndicatorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\VerificationResourcesRelationManager::class,
         ];
     }
 
