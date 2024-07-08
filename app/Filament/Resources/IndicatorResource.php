@@ -35,11 +35,7 @@ class IndicatorResource extends Resource
                     ->required()
                     ->label('Componente')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')
-                    ->label('Descripción')
-                    ->maxLength(350)
-                    ->required()
-                    ->columnSpanFull(),
+                    Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')
                     ->default(true)
                     ->label('Esta activo')

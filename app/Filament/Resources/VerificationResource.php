@@ -36,11 +36,7 @@ class VerificationResource extends Resource
                     ->required()
                     ->label('Indicador')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')
-                    ->label('Descripción')
-                    ->maxLength(350)
-                    ->required()
-                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
                 Forms\Components\TextInput::make('link')
                     ->label('Link')
                     ->required()
