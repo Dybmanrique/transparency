@@ -22,10 +22,8 @@ class ComponentsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('description')->label('Descripción')->required()->columnSpanFull(),
+                Forms\Components\TextInput::make('name')->label('Nombre')->required()->maxLength(255)->columnSpanFull(),
+                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
             ]);
     }
@@ -46,6 +44,7 @@ class ComponentsRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
