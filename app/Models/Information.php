@@ -14,4 +14,8 @@ class Information extends Model
         'description',
         'is_active',
     ];
+
+    public function information_details() {
+        return $this->hasMany(InformationDetail::class);
+    }
 }

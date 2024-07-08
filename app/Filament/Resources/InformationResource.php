@@ -77,7 +77,7 @@ class InformationResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\InformationDetailsRelationManager::class
         ];
     }
 
