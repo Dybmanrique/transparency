@@ -17,6 +17,7 @@ class InformationDetailResource extends Resource
 {
     protected static ?string $model = InformationDetail::class;
 
+    protected static ?int $navigationSort = 6;
     protected static ?string $navigationGroup = 'Información extra';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
