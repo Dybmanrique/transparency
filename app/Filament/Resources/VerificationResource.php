@@ -36,7 +36,11 @@ class VerificationResource extends Resource
                     ->required()
                     ->label('Indicador')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
+                    ->maxLength(600)
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('link')
                     ->label('Link')
                     ->required()
@@ -54,10 +58,20 @@ class VerificationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('description')->label('Descripción')->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('link')->label('Link')->searchable()->limit(20),
-                Tables\Columns\TextColumn::make('indicator.description')->label('Indicador')->limit(30),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripción')
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('link')
+                    ->label('Link')
+                    ->searchable()
+                    ->limit(20),
+                Tables\Columns\TextColumn::make('indicator.description')
+                    ->label('Indicador')
+                    ->limit(30),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //

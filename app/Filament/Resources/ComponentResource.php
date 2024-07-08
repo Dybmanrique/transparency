@@ -40,7 +40,11 @@ class ComponentResource extends Resource
                     ->required()
                     ->maxLength(350)
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
+                    ->maxLength(600)
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')
                     ->default(true)
                     ->label('Esta activo')
@@ -53,10 +57,20 @@ class ComponentResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('description')->label('Descripción')->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('condition.name')->label('Condición'),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripción')
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('condition.name')
+                    ->label('Condición')
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //

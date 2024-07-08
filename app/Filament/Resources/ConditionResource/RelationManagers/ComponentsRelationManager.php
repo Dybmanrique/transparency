@@ -22,9 +22,21 @@ class ComponentsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->label('Nombre')->required()->maxLength(255)->columnSpanFull(),
-                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
+                Forms\Components\TextInput::make('name')
+                    ->label('Nombre')
+                    ->required()
+                    ->maxLength(255)
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
+                    ->maxLength(600)
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Toggle::make('is_active')
+                    ->default(true)
+                    ->label('Esta activo')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -33,9 +45,16 @@ class ComponentsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('name')
             ->columns([
-                Tables\Columns\TextColumn::make('name')->label('Nombre')->searchable(),
-                Tables\Columns\TextColumn::make('description')->label('Descripcion')->searchable()->limit(50),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Nombre')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripcion')
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //

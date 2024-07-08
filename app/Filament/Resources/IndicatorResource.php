@@ -35,7 +35,11 @@ class IndicatorResource extends Resource
                     ->required()
                     ->label('Componente')
                     ->columnSpanFull(),
-                    Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
+                    ->maxLength(600)
+                    ->required()
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')
                     ->default(true)
                     ->label('Esta activo')
@@ -48,9 +52,16 @@ class IndicatorResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('description')->label('Descripción')->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('component.name')->label('Componente'),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripción')
+                    ->searchable()
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('component.name')
+                    ->label('Componente')
+                    ->searchable(),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //

@@ -22,8 +22,16 @@ class IndicatorsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('description')
+                    ->label('Descripción')
+                    ->maxLength(600)
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Toggle::make('is_active')
+                    ->default(true)
+                    ->label('Esta activo')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -32,8 +40,12 @@ class IndicatorsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('description')
             ->columns([
-                Tables\Columns\TextColumn::make('description')->label('Descripción')->limit(100),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripción')
+                    ->limit(100),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //
