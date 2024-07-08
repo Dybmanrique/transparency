@@ -15,4 +15,8 @@ class Regulation extends Model
         'is_active',
         'numeral_id',
     ];
+
+    public function numeral(){
+        return $this->belongsTo(Numeral::class);
+    }
 }
