@@ -14,4 +14,8 @@ class Numeral extends Model
         'description',
         'is_active',
     ];
+
+    public function regulations(){
+        return $this->hasMany(Regulation::class);
+    }
 }
