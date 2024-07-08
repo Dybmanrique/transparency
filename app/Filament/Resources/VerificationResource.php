@@ -18,6 +18,7 @@ class VerificationResource extends Resource
 {
     protected static ?string $model = ModelsVerificationResource::class;
 
+    protected static ?int $navigationSort = 4;
     protected static ?string $navigationGroup = 'Indicador-CBC';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 

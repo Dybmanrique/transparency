@@ -17,8 +17,9 @@ class IndicatorResource extends Resource
 {
     protected static ?string $model = Indicator::class;
 
+    protected static ?int $navigationSort = 3;
     protected static ?string $navigationGroup = 'Indicador-CBC';
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
     protected static ?string $label = 'Indicador';
     protected static ?string $pluralLabel = 'Indicadores';
