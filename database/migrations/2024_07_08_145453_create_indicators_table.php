@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('indicators', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->text('description');
             $table->boolean('is_active');
             $table->foreignId('component_id')->constrained()->cascadeOnDelete();

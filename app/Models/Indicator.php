@@ -10,7 +10,6 @@ class Indicator extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
         'description',
         'is_active',
         'component_id',
