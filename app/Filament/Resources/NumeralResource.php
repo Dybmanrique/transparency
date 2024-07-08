@@ -17,7 +17,8 @@ class NumeralResource extends Resource
 {
     protected static ?string $model = Numeral::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Numeral 11';
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     protected static ?string $label = 'Numeral';
     protected static ?string $pluralLabel = 'Numerales';
