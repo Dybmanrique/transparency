@@ -14,4 +14,8 @@ class Condition extends Model
         'description',
         'is_active',
     ];
+
+    public function components() {
+        return $this->hasMany(Component::class);
+    }
 }
