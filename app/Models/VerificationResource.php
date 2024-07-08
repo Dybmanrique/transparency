@@ -15,4 +15,8 @@ class VerificationResource extends Model
         'is_active',
         'indicator_id',
     ];
+
+    public function indicator(){
+        return $this->belongsTo(Indicator::class);
+    }
 }
