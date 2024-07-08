@@ -22,7 +22,7 @@ class IndicatorsRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('description')->label('Descripción')->required()->columnSpanFull(),
+                Forms\Components\Textarea::make('description')->label('Descripción')->maxLength(600)->required()->columnSpanFull(),
                 Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
             ]);
     }
