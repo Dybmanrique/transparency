@@ -19,7 +19,7 @@ class IndicatorResource extends Resource
 
     protected static ?int $navigationSort = 3;
     protected static ?string $navigationGroup = 'Indicador-CBC';
-    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
+    protected static ?string $navigationIcon = 'heroicon-o-flag';
 
     protected static ?string $label = 'Indicador';
     protected static ?string $pluralLabel = 'Indicadores';
