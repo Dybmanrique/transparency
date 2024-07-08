@@ -28,8 +28,8 @@ class NumeralResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')->label('Nombre')
                     ->required()->maxLength(255)->columnSpanFull(),
-                Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
                 Forms\Components\Textarea::make('description')->label('Descripción')->required()->columnSpanFull(),
+                Forms\Components\Toggle::make('is_active')->default(true)->label('Esta activo')->required()->columnSpanFull(),
             ]);
     }
 
