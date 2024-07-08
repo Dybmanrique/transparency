@@ -14,4 +14,8 @@ class Indicator extends Model
         'is_active',
         'component_id',
     ];
+
+    public function component(){
+        return $this->belongsTo(Component::class);
+    }
 }
