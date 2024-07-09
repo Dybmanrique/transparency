@@ -11,11 +11,11 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Spatie\Permission\Models\Role as ModelsRole;
+use App\Models\Role;
 
 class RoleResource extends Resource
 {
-    protected static ?string $model = ModelsRole::class;
+    protected static ?string $model = Role::class;
 
     protected static ?int $navigationSort = 7;
     protected static ?string $navigationIcon = 'heroicon-o-key';
