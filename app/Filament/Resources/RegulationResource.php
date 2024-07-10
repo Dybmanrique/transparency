@@ -60,11 +60,11 @@ class RegulationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('description')
-                    ->label('Link')
+                    ->label('Description')
                     ->searchable()
                     ->limit(40),
                 Tables\Columns\TextColumn::make('link')
-                    ->label('Nombre')
+                    ->label('Link')
                     ->searchable()
                     ->limit(40),
                 Tables\Columns\TextColumn::make('numeral.name')
