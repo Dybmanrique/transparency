@@ -9,6 +9,8 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -60,17 +62,29 @@ class RegulationResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->label('Link')
                     ->searchable()
-                    ->limit(50),
+                    ->limit(40),
                 Tables\Columns\TextColumn::make('link')
                     ->label('Nombre')
                     ->searchable()
-                    ->limit(50),
+                    ->limit(40),
+                Tables\Columns\TextColumn::make('numeral.name')
+                    ->label('Numeral')
+                    ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
                     ->label('Es activo'),
             ])
             ->filters([
-                //
+                SelectFilter::make('is_active')
+                    ->label('Estado')
+                    ->options([
+                        1 => 'Activo',
+                        0 => 'Inactivo',
+                    ]),
+                SelectFilter::make('numeral')
+                    ->relationship('numeral', 'name')
+                    ->searchable()
+                    ->preload()
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

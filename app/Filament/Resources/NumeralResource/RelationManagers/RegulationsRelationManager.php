@@ -6,6 +6,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -56,7 +57,12 @@ class RegulationsRelationManager extends RelationManager
                     ->label('Es activo'),
             ])
             ->filters([
-                //
+                SelectFilter::make('is_active')
+                    ->label('Estado')
+                    ->options([
+                        1 => 'Activo',
+                        0 => 'Inactivo',
+                    ]),
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
