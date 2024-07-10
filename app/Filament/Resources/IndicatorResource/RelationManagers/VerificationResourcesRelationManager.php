@@ -44,9 +44,15 @@ class VerificationResourcesRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('description')
             ->columns([
-                Tables\Columns\TextColumn::make('description')->label('Descripcion')->searchable()->limit(50),
-                Tables\Columns\TextColumn::make('link')->label('Link')->searchable()->limit(50),
-                Tables\Columns\IconColumn::make('is_active')->boolean()->label('Es activo'),
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Descripcion')
+                    ->limit(50),
+                Tables\Columns\TextColumn::make('link')
+                    ->label('Link')
+                    ->limit(50),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean()
+                    ->label('Es activo'),
             ])
             ->filters([
                 //

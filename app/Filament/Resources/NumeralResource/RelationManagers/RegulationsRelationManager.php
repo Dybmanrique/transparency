@@ -46,28 +46,22 @@ class RegulationsRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\TextColumn::make('description')
                     ->label('Descripcion')
-                    ->searchable()
                     ->limit(50),
                 Tables\Columns\TextColumn::make('link')
                     ->label('Link')
-                    ->searchable()
                     ->limit(50),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
                     ->label('Es activo'),
             ])
             ->filters([
-                SelectFilter::make('is_active')
-                    ->label('Estado')
-                    ->options([
-                        1 => 'Activo',
-                        0 => 'Inactivo',
-                    ]),
+                //
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])

@@ -46,11 +46,9 @@ class ComponentsRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nombre')
-                    ->searchable(),
+                    ->label('Nombre'),
                 Tables\Columns\TextColumn::make('description')
                     ->label('Descripcion')
-                    ->searchable()
                     ->limit(50),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
