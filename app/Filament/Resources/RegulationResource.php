@@ -60,7 +60,7 @@ class RegulationResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('description')
-                    ->label('Description')
+                    ->label('Descripción')
                     ->searchable()
                     ->limit(40),
                 Tables\Columns\TextColumn::make('link')
