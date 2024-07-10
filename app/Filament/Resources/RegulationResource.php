@@ -20,8 +20,8 @@ class RegulationResource extends Resource
     protected static ?string $navigationGroup = 'Numeral 11';
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $label = 'Regalamento';
-    protected static ?string $pluralLabel = 'Regalamentos';
+    protected static ?string $label = 'Reglamento';
+    protected static ?string $pluralLabel = 'Reglamentos';
 
     public static function form(Form $form): Form
     {
