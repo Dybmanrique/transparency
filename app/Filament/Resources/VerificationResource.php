@@ -10,6 +10,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -61,20 +62,44 @@ class VerificationResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->label('Descripción')
                     ->searchable()
-                    ->limit(50),
+                    ->limit(30),
+                Tables\Columns\TextColumn::make('indicator.description')
+                    ->label('Indicador')
+                    ->searchable()
+                    ->limit(30),
+                Tables\Columns\TextColumn::make('indicator.component.name')
+                    ->label('Componente')
+                    ->searchable()
+                    ->limit(30),
+                Tables\Columns\TextColumn::make('indicator.component.condition.name')
+                    ->label('Condición')
+                    ->searchable()
+                    ->limit(30),
                 Tables\Columns\TextColumn::make('link')
                     ->label('Link')
                     ->searchable()
-                    ->limit(20),
-                Tables\Columns\TextColumn::make('indicator.description')
-                    ->label('Indicador')
-                    ->limit(30),
+                    ->limit(10),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
                     ->label('Es activo'),
             ])
             ->filters([
-                //
+                SelectFilter::make('is_active')
+                    ->label('Estado')
+                    ->options([
+                        1 => 'Activo',
+                        0 => 'Inactivo',
+                    ]),
+                SelectFilter::make('component')
+                    ->relationship('indicator.component', 'name')
+                    ->label('Componente')
+                    ->searchable()
+                    ->preload(),
+                SelectFilter::make('condition')
+                    ->relationship('indicator.component.condition', 'name')
+                    ->label('Condición')
+                    ->searchable()
+                    ->preload()
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),

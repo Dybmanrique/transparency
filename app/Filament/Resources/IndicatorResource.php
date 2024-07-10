@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -59,12 +60,30 @@ class IndicatorResource extends Resource
                 Tables\Columns\TextColumn::make('component.name')
                     ->label('Componente')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('component.condition.name')
+                    ->label('Componente')
+                    ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
                     ->label('Es activo'),
             ])
             ->filters([
-                //
+                SelectFilter::make('is_active')
+                    ->label('Estado')
+                    ->options([
+                        1 => 'Activo',
+                        0 => 'Inactivo',
+                    ]),
+                SelectFilter::make('component')
+                    ->relationship('component', 'name')
+                    ->label('Componente')
+                    ->searchable()
+                    ->preload(),
+                SelectFilter::make('condition')
+                    ->relationship('component.condition', 'name')
+                    ->label('Condición')
+                    ->searchable()
+                    ->preload()
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
