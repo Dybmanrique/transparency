@@ -18,9 +18,9 @@ class DocumentResource extends Resource
 {
     protected static ?string $model = Document::class;
 
-    // protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 7;
     protected static ?string $navigationGroup = 'Documentos extra';
-    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
+    protected static ?string $navigationIcon = 'heroicon-o-folder';
 
     protected static ?string $label = 'Documento';
     protected static ?string $pluralLabel = 'Documentos';

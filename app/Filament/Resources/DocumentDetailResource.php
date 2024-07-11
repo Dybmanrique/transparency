@@ -18,8 +18,9 @@ class DocumentDetailResource extends Resource
 {
     protected static ?string $model = DocumentDetail::class;
 
+    protected static ?int $navigationSort = 8;
     protected static ?string $navigationGroup = 'Documentos extra';
-    protected static ?string $navigationIcon = 'heroicon-o-information-circle';
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $label = 'Detalle de documento';
     protected static ?string $pluralLabel = 'Detalles de documentos';
@@ -84,6 +85,7 @@ class DocumentDetailResource extends Resource
                     ->preload()
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
