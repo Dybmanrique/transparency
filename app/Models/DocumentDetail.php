@@ -15,4 +15,8 @@ class DocumentDetail extends Model
         'is_active',
         'document_id',
     ];
+
+    public function document() {
+        return $this->belongsTo(Document::class);
+    }
 }
