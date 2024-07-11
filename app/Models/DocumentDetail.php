@@ -12,6 +12,7 @@ class DocumentDetail extends Model
     protected $fillable = [
         'name',
         'file',
-        'is_active'
+        'is_active',
+        'document_id',
     ];
 }

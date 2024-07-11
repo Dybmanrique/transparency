@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('file');
             $table->boolean('is_active');
+            $table->foreignId('document_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
