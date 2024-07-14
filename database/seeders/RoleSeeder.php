@@ -57,6 +57,16 @@ class RoleSeeder extends Seeder
             'Detalles de información: Crear',
             'Detalles de información: Editar',
             'Detalles de información: Eliminar',
+            //DOCUMENTOS
+            'Documentos: Listar',
+            'Documentos: Crear',
+            'Documentos: Editar',
+            'Documentos: Eliminar',
+            //DETALLES DE DOCUMENTOS
+            'Detalles de documentos: Listar',
+            'Detalles de documentos: Crear',
+            'Detalles de documentos: Editar',
+            'Detalles de documentos: Eliminar',
             //ROLES
             'Roles: Listar',
             'Roles: Crear',
