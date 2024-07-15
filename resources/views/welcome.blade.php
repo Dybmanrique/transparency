@@ -18,12 +18,7 @@
         </section>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <section class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-                <div class="bg-white p-5 m-2 text-center border-l-4 border-blue-950 rounded-md transition-transform transform hover:scale-110"><!-- Card -->
-                    <a href="https://unasam.edu.pe/misionvision">
-                        <h2 class="uppercase text-blue-950 mb-4 font-bold text-lg">Numeral 11 de la ley universitaria</h2>
-                        <p>Una descripción de la ley universitaria</p>
-                    </a>
-                </div>
+                <x-card title="Numeral 11 de la ley universitaria" description='Una descripción de la ley universitaria' />
             </section>
         </div>
     </main>
