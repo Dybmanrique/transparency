@@ -12,7 +12,7 @@
             <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="http://campus.unasam.edu.pe">Campus Virtual</a></li>
             <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://sga.unasam.edu.pe">Sistema de Gestión Academica</a></li>
             <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://www.office.com/">Office 365</a></li>
-            <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://directorio.universidad.edu">Directorio Telefónico</a></li>
+            <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://www.gob.pe/institucion/unasam/contacto-y-numeros-de-emergencias">Directorio Telefónico</a></li>
         </ul>
     </nav>
     <nav class="sm:hidden relative px-2 pb-2">
@@ -26,7 +26,7 @@
                     <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="http://campus.unasam.edu.pe">Campus Virtual</a></span>
                     <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://sga.unasam.edu.pe">Sistema de Gestión Academica</a></span>
                     <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://www.office.com/">Office 365</a></span>
-                    <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://directorio.universidad.edu">Directorio Telefónico</a></span>
+                    <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://www.gob.pe/institucion/unasam/contacto-y-numeros-de-emergencias">Directorio Telefónico</a></span>
                 </div>
             </div>
         </div>
