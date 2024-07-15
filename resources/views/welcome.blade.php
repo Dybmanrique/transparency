@@ -7,40 +7,7 @@
   @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-200">
-    <header class="bg-blue-950 text-white sticky w-full top-0 z-20">
-        <div class="flex justify-between items-center py-4">
-            <img src="https://www.unasam.edu.pe/img/unasam.png" alt="Logo Universidad" class="w-12 ml-4">
-            <div class="flex-grow text-center">
-                <h1 class="font-bold text-2xl md:text-4xl">PORTAL DE TRANSPARENCIA</h1>
-                <p class="sm:block hidden text-xl">UNIVERSIDAD NACIONAL SANTIAGO ANTÚNEZ DE MAYOLO</p>
-                <p class="sm:hidden block text-xl">UNASAM</p>
-            </div>
-        </div>
-        <nav class="sm:block hidden bg-gray-900 text-right">
-            <ul class="m-0 px-3">
-                <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="http://campus.unasam.edu.pe">Campus Virtual</a></li>
-                <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://sga.unasam.edu.pe">Sistema de Gestión Academica</a></li>
-                <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://www.office.com/">Office 365</a></li>
-                <li class="inline-block px-4 py-2 hover:bg-blue-950 transition-transform transform hover:scale-110 rounded m-0"><a target="_blank" href="https://directorio.universidad.edu">Directorio Telefónico</a></li>
-            </ul>
-        </nav>
-        <nav class="sm:hidden relative px-2 pb-2">
-            <button data-ripple-light="true" data-collapse-target="collapse" 
-            class="select-none w-full rounded-md bg-gray-900 py-2 text-center align-middle font-sans uppercase text-white shadow-md shadow-gray-900/10 transition-all hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                OTROS ENLACES
-            </button>
-            <div data-collapse="collapse" class="block h-0 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out">
-                <div class="relative mx-auto my-4 flex flex-col rounded-md bg-white bg-clip-border text-gray-700 shadow-md">
-                    <div class="flex flex-col">
-                        <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="http://campus.unasam.edu.pe">Campus Virtual</a></span>
-                        <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://sga.unasam.edu.pe">Sistema de Gestión Academica</a></span>
-                        <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://www.office.com/">Office 365</a></span>
-                        <span class="inline-block px-4 py-2 hover:bg-blue-950 hover:text-white rounded m-0"><a target="_blank" href="https://directorio.universidad.edu">Directorio Telefónico</a></span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <x-header />
     <main>
         <section class="hero">
             <img src="{{ asset('img/university-campus.jpg') }}" alt="Campus Universitario" class="w-full object-cover block mb-4">
@@ -60,23 +27,8 @@
             </section>
         </div>
     </main>
-    <footer class="bg-blue-950 py-4 mt-4 text-white text-center text-sm">
-        <p>© Derechos de autor 2024. Universidad Nacional Santiago Antúnez de Mayolo - Todos los Derechos Reservados.
-        </p>
-        <p>RUC: 2016650239 | Av. Centenario Nro. 200</p>
-    </footer>
-    <div class="fixed bottom-4 right-4 z-50">
-        <input type="checkbox" id="btn-mas">
-        <div class="redes">
-            <a href="#" class="fa fa-facebook bg-blue-900 text-white"></a>
-            <a href="#" class="fa fa-youtube bg-blue-900 text-white"></a>
-            <a href="#" class="fa fa-twitter bg-blue-900 text-white"></a>
-            <a href="#" class="fa fa-pinterest bg-blue-900 text-white"></a>
-        </div>
-        <div class="btn-mas">
-            <label for="btn-mas" class="fa fa-envelope bg-gray-600 text-white"></label>
-        </div>
-    </div>
+    <x-footer />
+    <x-social-networks />
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </body>
