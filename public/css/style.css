@@ -1,0 +1,116 @@
+/*SECCIÓN DE LA TRANSPARENCIA UNASAM FRENTE A LA IMAGEN*/
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Evita que la imagen se desborde */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 51, 102, 0.7);
+    padding: 20px;
+    border-radius: 6px;
+    overflow: hidden; /* Para ocultar el desbordamiento de los pseudo-elementos */
+    text-align: center; /* Centrar el texto horizontalmente */
+    color: #ffffff; /* Color de texto blanco */
+    z-index: 1; /* Asegurar que el texto esté encima del efecto de luces */
+}
+
+@media only screen and (max-width: 600px) {
+    .hero-text {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 10px 10px;
+        transform: translate(0, 0);
+    }
+}
+
+.hero-text::before,
+.hero-text::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Cubre completamente el contenedor */
+    height: 100%; /* Cubre completamente el contenedor */
+    background: radial-gradient(circle, rgba(255,255,255,0.3), rgba(0,0,0,0)); /* Gradiente más suave */
+    animation: moveShine 5s infinite linear; /* Animación para el movimiento del brillo */
+    pointer-events: none; /* Evitar que los pseudo-elementos interfieran con los eventos del mouse */
+    border-radius: 50%; /* Forma circular para el gradiente */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+.hero-text::before {
+    top: 0;
+    left: -100%; /* Comienza fuera del contenedor a la izquierda */
+}
+
+.hero-text::after {
+    top: 0;
+    right: -100%; /* Comienza fuera del contenedor a la derecha */
+}
+
+@keyframes moveShine {
+    0% {
+        transform: translateX(-100%) translateY(-50%) scale(0.5); /* Escala inicial reducida y posición inicial a la izquierda */
+    }
+    50% {
+        transform: translateX(100%) translateY(-50%) scale(1.2); /* Escala aumentada y posición media a la derecha */
+        opacity: 1; /* Hace visible el efecto a la mitad de la animación */
+    }
+    100% {
+        transform: translateX(300%) translateY(-50%) scale(0.5); /* Escala reducida y posición final a la derecha */
+        opacity: 0; /* Vuelve a hacer invisible el efecto al final de la animación */
+    }
+}
+
+.hero-text:hover::before,
+.hero-text:hover::after {
+    opacity: 1; /* Mostrar los pseudo-elementos al hacer hover */
+}
+/*SECCIÓN DE LA TRANSPARENCIA UNASAM FRENTE A LA IMAGEN*/
+
+/*SECCIÓN DE LOS BOTONES DE REDES SOCIALES*/
+#btn-mas{
+    display: none;
+}
+.redes a, .btn-mas label{
+    display: block;
+    text-decoration: none;
+    /* background: #cc2b2b;
+    color: #fff; */
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500ms ease;
+}
+.redes a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+.redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+.btn-mas label{
+    cursor: pointer;
+    /* background: #f44141; */
+    font-size: 23px;
+}
+#btn-mas:checked ~ .btn-mas label{
+    transform: rotate(180deg);
+    font-size: 25px;
+}
+/*SECCIÓN DE LOS BOTONES DE REDES SOCIALES*/
