@@ -7,6 +7,6 @@
         <a href="#" class="fa fa-pinterest bg-blue-900 text-white"></a>
     </div>
     <div class="btn-mas">
-        <label for="btn-mas" class="fa fa-envelope bg-gray-600 text-white"></label>
+        <label for="btn-mas" class="fa fa-at bg-gray-600 text-white"></label>
     </div>
 </div>
