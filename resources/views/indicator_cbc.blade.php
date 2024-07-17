@@ -21,7 +21,7 @@
                         <x-tab title="Numeral 11 de la ley universitaria" link="{{route('numerals')}}"/>
                         <x-tab title="Indicadores-CBC" link="{{route('indicador_cbc')}}"/>
                         @foreach ($informations as $information)
-                            <x-tab title="{{$information->name}}" link="#"/>
+                            <x-tab title="{{$information->name}}" link="{{route('information',$information)}}"/>
                         @endforeach
                         @foreach ($documents as $document)
                             <x-tab title="{{$document->name}}" link="#"/>

@@ -17,10 +17,19 @@ class WelcomeController extends Controller
     }
     public function numerals() {
         $numerals = Numeral::where('is_active',true)->get();
-        return view('numerals',compact('numerals'));
+        $informations = Information::all();
+        $documents = Document::all();
+        return view('numerals',compact('numerals','informations','documents'));
     }
     public function indicador_cbc() {
         $conditions = Condition::where('is_active',true)->get();
-        return view('indicator_cbc',compact('conditions'));
+        $informations = Information::all();
+        $documents = Document::all();
+        return view('indicator_cbc',compact('conditions','informations','documents'));
+    }
+    public function information(Information $information) {
+        $informations = Information::all();
+        $documents = Document::all();
+        return view('information',compact('information','informations','documents'));
     }
 }
