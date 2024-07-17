@@ -18,15 +18,14 @@
             <div class="flex flex-col lg:flex-row">
                 <div class="flex-none lg:w-1/3">
                     <div class="flex flex-col">
-                        <div
-                            class=" bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md transition-transform transform hover:scale-105">
-                            <h2 class="uppercase text-sm text-blue-950 font-bold">Numeral 11 de la ley universitaria
-                            </h2>
-                        </div>
-                        <div
-                            class="bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md transition-transform transform hover:scale-105">
-                            <h2 class="uppercase text-sm text-blue-950 font-bold">Indicadores-CBC</h2>
-                        </div>
+                        <x-tab title="Numeral 11 de la ley universitaria" link="{{route('numerals')}}"/>
+                        <x-tab title="Indicadores-CBC" link="{{route('indicador_cbc')}}"/>
+                        @foreach ($informations as $information)
+                            <x-tab title="{{$information->name}}" link="#"/>
+                        @endforeach
+                        @foreach ($documents as $document)
+                            <x-tab title="{{$document->name}}" link="#"/>
+                        @endforeach
                     </div>
                 </div>
                 <div class="flex-1 lg:w-2/3 bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md">
