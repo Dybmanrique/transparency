@@ -29,12 +29,12 @@
                     </div>
                 </div>
                 <div class="flex-1 lg:w-2/3 bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md">
-                    <h2 class="uppercase text-blue-950 font-bold text-lg">{{$information->name}}</h2>
-                    <p class="mb-4 text-blue-950">{{$information->description}}</p>
+                    <h2 class="uppercase text-blue-950 font-bold text-lg">{{$document->name}}</h2>
+                    <p class="mb-4 text-blue-950">{{$document->description}}</p>
                     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                        @foreach ($information->information_details as $information_detail)
-                            <a href="{{$information_detail->link}}" target="_blank" class="w-full rounded-md bg-blue-950 p-2 text-center align-middle font-sans uppercase text-white transition-transform transform hover:scale-105">
-                                {{ $information_detail->name }}
+                        @foreach ($document->document_details as $document_detail)
+                            <a href="{{Storage::url($document_detail->file)}}" target="_blank" class="w-full rounded-md bg-blue-950 p-2 text-center align-middle font-sans uppercase text-white transition-transform transform hover:scale-105">
+                                {{ $document_detail->name }}
                             </a>
                         @endforeach
                     </div>

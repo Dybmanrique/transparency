@@ -32,4 +32,9 @@ class WelcomeController extends Controller
         $documents = Document::all();
         return view('information',compact('information','informations','documents'));
     }
+    public function document(Document $document) {
+        $informations = Information::all();
+        $documents = Document::all();
+        return view('document',compact('document','informations','documents'));
+    }
 }
