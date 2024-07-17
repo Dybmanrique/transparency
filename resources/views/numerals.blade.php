@@ -44,8 +44,11 @@
                                 <div class="flex flex-col">
                                     @foreach ($numeral->regulations as $regulation)
                                         @if ($regulation->is_active)
-                                            <span class="text-blue-950 hover:underline my-1"><a target="_blank"
-                                                    href="{{ $regulation->link }}">{{ $regulation->description }}</a></span>
+                                            <a
+                                                href="{{ $regulation->link }}" target="_blank"
+                                                class="w-full rounded-md bg-gray-700 p-2 my-1 text-left align-middle font-sans text-white focus:font-bold">
+                                                {{$regulation->description}}
+                                            </a>
                                         @endif
                                     @endforeach
                                 </div>
