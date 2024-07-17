@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="flex-1 lg:w-2/3 bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md">
-                    <h2 class="uppercase text-blue-950 mb-4 font-bold text-lg">Indicador de Condiciones Básicas de Calidad</h2>
+                    <h2 class="uppercase text-blue-950 mb-4 font-bold text-lg">Indicadores de Condiciones Básicas de Calidad</h2>
                     @foreach ($conditions as $condition)
                         <button data-ripple-light="true" data-collapse-target="collapse{{ $condition->id }}"
                             class="w-full rounded-md bg-blue-950 p-2 mt-0 text-center align-middle font-sans uppercase text-white focus:font-bold">
@@ -44,17 +44,10 @@
                                 <div class="flex flex-col">
                                     @foreach ($condition->components as $component)
                                         @if ($component->is_active)
-                                            <button data-ripple-light="true" data-collapse-target="collapse{{$component->id}}b"
-                                                class="w-full rounded-md bg-white p-2 mt-0 text-center align-middle font-sans uppercase text-blue-950 focus:font-bold">
-                                                {{ $component->name }}
+                                            <button
+                                                class="w-full rounded-md bg-gray-700 p-2 my-1 text-left align-middle font-sans text-white focus:font-bold">
+                                                <span class="font-bold">{{ $component->name }}:</span> {{$component->description}}
                                             </button>
-                                            <div data-collapse="collapse{{$component->id}}b"
-                                                class="block h-0 my-1 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out">
-                                                <div
-                                                    class="relative mx-auto flex flex-col rounded-md bg-gray-50 p-2 bg-clip-border text-blue-950">
-                                                    <h2>{{$component->description}}</h2>
-                                                </div>
-                                            </div>
                                         @endif
                                     @endforeach
                                 </div>
