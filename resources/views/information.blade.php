@@ -20,8 +20,8 @@
                     <div class="flex flex-col">
                         <x-tab title="Numeral 11 de la ley universitaria" link="{{route('numerals')}}"/>
                         <x-tab title="Indicadores-CBC" link="{{route('indicador_cbc')}}"/>
-                        @foreach ($informations as $information)
-                            <x-tab title="{{$information->name}}" link="#"/>
+                        @foreach ($informations as $info)
+                            <x-tab title="{{$info->name}}" link="{{route('information',$info)}}"/>
                         @endforeach
                         @foreach ($documents as $document)
                             <x-tab title="{{$document->name}}" link="#"/>
@@ -29,10 +29,11 @@
                     </div>
                 </div>
                 <div class="flex-1 lg:w-2/3 bg-white p-2 m-1 border-l-4 border-blue-950 rounded-md">
-                    <h2 class="uppercase text-blue-950 mb-4 font-bold text-lg">{{$information->name}}</h2>
+                    <h2 class="uppercase text-blue-950 font-bold text-lg">{{$information->name}}</h2>
+                    <p class="mb-4 text-blue-950">{{$information->description}}</p>
                     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                         @foreach ($information->information_details as $information_detail)
-                            <a href="{{$information_detail->link}}" target="_blank" class="w-full rounded-md bg-blue-950 p-2 text-center align-middle font-sans uppercase text-white focus:font-bold">
+                            <a href="{{$information_detail->link}}" target="_blank" class="w-full rounded-md bg-blue-950 p-2 text-center align-middle font-sans uppercase text-white transition-transform transform hover:scale-105">
                                 {{ $information_detail->name }}
                             </a>
                         @endforeach
