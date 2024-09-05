@@ -21,10 +21,10 @@
                     description='Una descripción de la ley universitaria' link="{{route('numerals')}}" />
                 <x-card title="Indicador-CBC" description='Una descripción del inidicador CBC' link="{{route('indicador_cbc')}}" />
                 @foreach ($informations as $information)
-                    <x-card title="{{$information->name}}" description='{{$information->description}}' link='xd'/>
+                    <x-card title="{{$information->name}}" description='{{$information->description}}' link="{{route('information', $information)}}"/>
                 @endforeach
                 @foreach ($documents as $document)
-                    <x-card title="{{$document->name}}" description='{{$document->description}}' link='xd'/>
+                    <x-card title="{{$document->name}}" description='{{$document->description}}' link="{{route('document', $document)}}"/>
                 @endforeach
             </section>
         </div>
