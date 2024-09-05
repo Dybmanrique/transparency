@@ -10,9 +10,9 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 flex flex-col h-screen justify-between">
     <x-header />
-    <main>
+    <main class="mb-0">
         <x-back-image isComplete="0" />
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row">

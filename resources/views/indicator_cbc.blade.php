@@ -12,9 +12,9 @@
     @livewireStyles
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 flex flex-col h-screen justify-between">
     <x-header />
-    <main>
+    <main class="mb-auto">
         <x-back-image isComplete="0" />
         @livewire('indicators-cbc')
     </main>
