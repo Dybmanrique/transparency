@@ -18,13 +18,13 @@
             <div class="flex flex-col lg:flex-row">
                 <div class="flex-none lg:w-1/3">
                     <div class="flex flex-col">
-                        <x-tab title="Numeral 11 de la ley universitaria" link="{{route('numerals')}}"/>
-                        <x-tab title="Indicadores-CBC" link="{{route('indicador_cbc')}}"/>
+                        <x-tab title="Numeral 11 de la ley universitaria" link="{{ route('numerals') }}" />
+                        <x-tab title="Indicadores-CBC" link="{{ route('indicador_cbc') }}" />
                         @foreach ($informations as $info)
-                            <x-tab title="{{$info->name}}" link="{{route('information',$info)}}"/>
+                            <x-tab title="{{ $info->name }}" link="{{ route('information', $info) }}" />
                         @endforeach
                         @foreach ($documents as $doc)
-                            <x-tab title="{{$doc->name}}" link="{{route('document',$doc)}}"/>
+                            <x-tab title="{{ $doc->name }}" link="{{ route('document', $doc) }}" />
                         @endforeach
                     </div>
                 </div>
@@ -39,17 +39,18 @@
                             class="block h-0 my-1 w-full basis-full overflow-hidden transition-all duration-300 ease-in-out">
                             <div
                                 class="relative mx-auto flex flex-col rounded-md bg-gray-200 p-2 bg-clip-border text-blue-950">
-                                <h3 class="font-bold uppercase">{{$numeral->description}}</h3>
+                                <h3 class="font-bold uppercase">{{ $numeral->description }}</h3>
                                 <hr class="border-blue-950 my-1">
                                 <div class="flex flex-col">
                                     @foreach ($numeral->regulations as $regulation)
-                                        @if ($regulation->is_active)
-                                            <a
-                                                href="{{ $regulation->link }}" target="_blank"
-                                                class="w-full rounded-md bg-gray-700 p-2 my-1 text-left align-middle font-sans text-white focus:font-bold">
-                                                {{$regulation->description}}
-                                            </a>
-                                        @endif
+                                        <ul class="ms-5 list-disc">
+                                            @if ($regulation->is_active)
+                                                <li><a href="{{ $regulation->link }}" target="_blank"
+                                                    class="w-full rounded-md my-1 hover:underline text-left font-sans">
+                                                    {{ $regulation->description }}
+                                                </a></li>
+                                            @endif
+                                        </ul>
                                     @endforeach
                                 </div>
                             </div>
@@ -63,7 +64,9 @@
     <x-footer />
     <x-social-networks />
     <script src="{{ asset('js/scripts.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
 
 </html>
