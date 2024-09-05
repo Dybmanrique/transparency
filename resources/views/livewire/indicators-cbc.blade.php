@@ -4,13 +4,13 @@
             <div class="flex flex-col lg:flex-row">
                 <div class="flex-none lg:w-1/3">
                     <div class="flex flex-col">
-                        <x-tab title="Numeral 11 de la ley universitaria" link="{{ route('numerals') }}" />
-                        <x-tab title="Indicadores-CBC" link="{{ route('indicador_cbc') }}" />
+                        <x-tab isActive="0" title="Numeral 11 de la ley universitaria" link="{{ route('numerals') }}" />
+                        <x-tab isActive="1" title="Indicadores-CBC" link="{{ route('indicador_cbc') }}" />
                         @foreach ($informations as $info)
-                            <x-tab title="{{ $info->name }}" link="{{ route('information', $info) }}" />
+                            <x-tab isActive="0" title="{{ $info->name }}" link="{{ route('information', $info) }}" />
                         @endforeach
                         @foreach ($documents as $doc)
-                            <x-tab title="{{ $doc->name }}" link="{{ route('document', $doc) }}" />
+                            <x-tab isActive="0" title="{{ $doc->name }}" link="{{ route('document', $doc) }}" />
                         @endforeach
                     </div>
                 </div>
